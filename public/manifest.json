@@ -1,0 +1,17 @@
+{
+  "short_name": "QubitScope",
+  "name": "QubitScope: Interactive 3D Quantum Simulator",
+  "description": "An interactive quantum simulation laboratory that visualizes single-qubit state transitions and unitary evolutions in 3D on the Bloch sphere.",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#070a13",
+  "theme_color": "#070a13",
+  "display": "standalone",
+  "orientation": "portrait"
+}

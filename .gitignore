@@ -207,3 +207,12 @@ marimo/_lsp/
 __marimo__/
 
 .vscode/
+
+# Node/Vite
+node_modules/
+dist/
+dist-ssr/
+*.local
+.eslintcache
+vite.config.ts.timestamp-*
+.oxlintrc.json
