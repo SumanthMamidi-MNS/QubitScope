@@ -5,10 +5,11 @@
 
 **An open, interactive educational platform designed to build genuine physical and mathematical intuition for single-qubit quantum computing.**
 
-[![React](https://img.shields.io/badge/React-19-61dafb?style=for-the-badge&logo=react&logoColor=black&labelColor=020617)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?style=for-the-badge&logo=typescript&logoColor=white&labelColor=020617)](https://www.typescriptlang.org/)
 [![Three.js](https://img.shields.io/badge/Three.js-R3F-06b6d4?style=for-the-badge&logo=three.js&logoColor=white&labelColor=020617)](https://threejs.org/)
+[![React](https://img.shields.io/badge/React-19-ec4899?style=for-the-badge&logo=react&logoColor=white&labelColor=020617)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-a855f7?style=for-the-badge&logo=typescript&logoColor=white&labelColor=020617)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white&labelColor=020617)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-8.0-fb923c?style=for-the-badge&logo=vite&logoColor=white&labelColor=020617)](https://vite.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-7df9ff?style=for-the-badge&logo=opensourceinitiative&logoColor=black&labelColor=020617)](./LICENSE)
 
 [![Try QubitScope](https://img.shields.io/badge/▶_Try_QubitScope-Live_Platform-22c55e?style=for-the-badge&logo=vercel&logoColor=white&labelColor=020617)](https://qubitscope.vercel.app/)
