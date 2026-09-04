@@ -45,8 +45,8 @@ Quantum computing is notoriously difficult to learn because its core mathematica
 > **⚡ Client-Side Simulation Laboratory**  
 > Runs entirely in modern browsers via WebGL & TypeScript. Provides instant interactive feedback with zero server delays, cloud dependencies, or software installation.
 >
-> **🔄 Dual-Horizon Cognitive Scaffolding**  
-> Dynamically adapts the entire application copy between **Beginner Mode** (geometric analogies and intuitive descriptions) and **Advanced Mode** (Dirac bra-ket notations, Euler angles, and unitary matrices).
+> **🧭 Intuitive Conceptual Scaffolding**  
+> Designed from the ground up to make quantum computing accessible. Replaces intimidating graduate-level linear algebra with tangible 3D geometric models, real-time probability meters, and clear physical analogies.
 
 ---
 
@@ -92,17 +92,17 @@ A built-in reference ecosystem ensuring learners never need to leave the platfor
 ---
 
 <a id="scaffolding"></a>
-## 🔄 Dual-Horizon Cognitive Scaffolding
+## 💡 Conceptual Foundations: Intuition Meets Physical Reality
 
-QubitScope features a global educational mode switch that instantly re-anchors the entire application copy between conceptual intuition and mathematical rigor:
+QubitScope translates abstract quantum mechanical principles into intuitive geometric and physical models:
 
-| Concept | Beginner Mode (Intuition First) | Advanced Mode (Mathematical Rigor) |
+| Quantum Concept | Intuitive Physical Analogy | How QubitScope Simulates It |
 | :--- | :--- | :--- |
-| **Qubit State** | A quantum coin spinning in the air with probabilities of landing on 0 or 1. | Statevector in a 2D complex Hilbert space: $\vert\psi\rangle = \alpha\vert 0\rangle + \beta\vert 1\rangle \in \mathbb{C}^2$, with $\lvert\alpha\rvert^2 + \lvert\beta\rvert^2 = 1$. |
-| **Bloch Sphere** | A 3D globe where the North Pole is $\vert 0\rangle$, the South Pole is $\vert 1\rangle$, and the equator represents a 50/50 mix. | Geometric space of pure states where Cartesian coordinates map to Pauli observables: $(x, y, z) = (\langle X \rangle, \langle Y \rangle, \langle Z \rangle)$. |
-| **Hadamard Gate ($H$)** | Rotates a definite state down to the equator into an equal 50/50 superposition. | Unitary transformation mapping basis state $\vert 0\rangle$ to equal superposition state $\vert +\rangle = \frac{\vert 0\rangle + \vert 1\rangle}{\sqrt{2}}$. |
-| **Phase Gate ($S$)** | Turns the state around the vertical axis without changing the 0 or 1 chances. | Diagonal unitary operator applying a $+90^\circ$ relative phase shift $\phi$ along the equator ($\vert 1\rangle \to i\vert 1\rangle$). |
-| **Measurement** | Looking at the qubit forces it to stop spinning and commit to 0 or 1. | Non-unitary projection postulate: $P(i) = \lvert\langle i\vert\psi\rangle\rvert^2$, collapsing the superposition state to basis state $\vert i\rangle$. |
+| **Qubit State ($\vert\psi\rangle$)** | A spinning coin suspended in air—possessing definite chances of landing on 0 or 1. | 3D statevector arrow pointing to exact spherical coordinates on the Bloch sphere. |
+| **Bloch Sphere** | A 3D globe where the North Pole is state 0, the South Pole is 1, and the equator is a 50/50 blend. | Interactive WebGL unit sphere with real-time orbit navigation and pole landmarks. |
+| **Hadamard Gate ($H$)** | The Superposition Creator: Rotates a definite state from the pole down to the equator. | $90^\circ$ continuous geodetic rotation creating an equal 50% $\vert 0\rangle$ / 50% $\vert 1\rangle$ superposition. |
+| **Phase Gate ($S$)** | Spins the state around the vertical axis without altering the 0 or 1 chances. | Equatorial azimuthal phase rotation ($\phi \to \phi + 90^\circ$) driving quantum interference. |
+| **Measurement** | Rolling the dice: observing the coin forces it to land and freeze on either heads or tails. | Stochastic wavefunction collapse projecting the arrow to basis poles $\vert 0\rangle$ or $\vert 1\rangle$ via Born's rule. |
 
 ---
 
@@ -117,7 +117,7 @@ QubitScope features a global educational mode switch that instantly re-anchors t
 | **📐 Arbitrary Angle** | Adjust $\theta$ slider + click $R_x, R_y, R_z$ | Perform continuous rotations around $X$, $Y$, or $Z$ by angle $\theta$ |
 | **🎲 Measure State** | Click **Measure** button | Collapse superposition to $\vert 0\rangle$ or $\vert 1\rangle$ via Born's rule |
 | **🔄 Ground Reset** | Click **Reset** button | Clear history and return the statevector to $\vert 0\rangle$ |
-| **🎓 Mode Switch** | Click **Beginner** / **Advanced** in nav | Toggle copy between conceptual intuition and Dirac / matrix math |
+| **💡 Step-by-Step Guide** | Click **Guide** in navigation | Launch the 6-step interactive onboarding tour explaining every workstation element |
 | **⚙️ Preferences** | Click **Settings** cog in nav | Adjust animation speed, toggle grid lines, and toggle pole labels |
 
 ---
@@ -131,7 +131,7 @@ The following diagram illustrates the complete, deterministic pipeline from user
 flowchart TD
     subgraph S1 ["1. USER INTERACTION & CONTROLS"]
         Input["🖱️ Laboratory Actions<br/>(Gate Triggers • Angle Sliders • Camera Orbit)"]
-        Mode["🎓 Educational Mode Scaffolding<br/>(Beginner Intuition vs. Advanced Math)"]
+        Guide["🎓 Onboarding Tour & Sandboxes<br/>(Interactive Step-by-Step Walkthrough)"]
     end
 
     subgraph S2 ["2. STATE MANAGEMENT & ORCHESTRATION"]
@@ -163,7 +163,7 @@ flowchart TD
     end
 
     Input --> Hook
-    Mode --> Hook
+    Guide --> Hook
     Hook <--> Storage
     Hook --> Complex
     Hook --> Unitary
@@ -188,7 +188,7 @@ flowchart TD
     classDef render fill:#18181b,stroke:#fb923c,stroke-width:2px,color:#fff;
     classDef ui fill:#09090b,stroke:#7df9ff,stroke-width:2px,color:#fff;
 
-    class Input,Mode stage;
+    class Input,Guide stage;
     class Hook,Storage logic;
     class Complex,Unitary,Born math;
     class BlochMap,ThreeMap spatial;

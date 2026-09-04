@@ -362,12 +362,18 @@ export const LearnPage: React.FC<LearnPageProps> = ({ isAdvanced, onNavigate }) 
 
                 {/* Chapter 6 CTA link to Simulator page */}
                 {activeChapter.id === 6 && (
-                  <div className="p-6 rounded-2xl bg-slate-900/50 border border-white/5 text-center space-y-4 my-6">
+                  <div className="p-6 rounded-2xl bg-gradient-to-b from-cyan-950/30 to-slate-900/60 border border-cyan-500/20 text-center space-y-4 my-6 shadow-xl">
                     <Compass className="w-12 h-12 text-cyan-400 mx-auto animate-pulse" />
-                    <div className="space-y-1 max-w-md mx-auto">
-                      <h4 className="font-heading font-extrabold text-base text-slate-100">Ready to enter the full laboratory?</h4>
+                    <div className="space-y-1.5 max-w-md mx-auto">
+                      <h4 className="font-heading font-extrabold text-base text-slate-100">
+                        {completedChapters.includes(6)
+                          ? '🎉 Course Completed! 100% Mastered'
+                          : 'Ready to enter the full laboratory?'}
+                      </h4>
                       <p className="text-xs text-slate-400 leading-normal">
-                        Switch to the main **Simulator Workspace** to apply gates continuously, check state collapses, and view complete trace history pipelines.
+                        {completedChapters.includes(6)
+                          ? 'You have finished all 6 foundational chapters. Head into the interactive Simulator Workspace to experiment with continuous rotations and custom circuits!'
+                          : 'Switch to the main Simulator Workspace to apply gates continuously, check state collapses, and view complete trace history pipelines.'}
                       </p>
                     </div>
                     {onNavigate && (
@@ -375,7 +381,7 @@ export const LearnPage: React.FC<LearnPageProps> = ({ isAdvanced, onNavigate }) 
                         variant="glow"
                         size="md"
                         onClick={() => onNavigate('simulator')}
-                        className="font-bold text-slate-950 px-5"
+                        className="font-bold text-slate-950 px-6 py-2 shadow-lg"
                       >
                         Enter Workspace Simulator
                       </Button>
@@ -401,10 +407,22 @@ export const LearnPage: React.FC<LearnPageProps> = ({ isAdvanced, onNavigate }) 
                   
                   <Button
                     variant={completedChapters.includes(activeChapter.id) ? 'outline' : 'glow'}
-                    onClick={() => handleMarkCompleted(activeChapter.id)}
-                    className="font-bold text-xs flex items-center gap-1"
+                    onClick={() => {
+                      if (activeChapter.id === LEARN_CHAPTERS.length && completedChapters.includes(6)) {
+                        if (onNavigate) onNavigate('simulator');
+                      } else {
+                        handleMarkCompleted(activeChapter.id);
+                      }
+                    }}
+                    className={`font-bold text-xs flex items-center gap-1.5 ${
+                      activeChapter.id === LEARN_CHAPTERS.length && completedChapters.includes(6)
+                        ? 'border-emerald-500/40 text-emerald-400 bg-emerald-950/20 hover:bg-emerald-950/30'
+                        : ''
+                    }`}
                   >
-                    {activeChapter.id === LEARN_CHAPTERS.length ? 'Finish Course 🎓' : 'Mark Completed & Next'}
+                    {activeChapter.id === LEARN_CHAPTERS.length
+                      ? (completedChapters.includes(6) ? '✓ Course Completed (Launch Lab)' : 'Finish Course 🎓')
+                      : 'Mark Completed & Next'}
                     <ChevronRight size={14} />
                   </Button>
                 </div>

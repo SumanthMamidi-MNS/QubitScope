@@ -160,30 +160,30 @@ const BlochSphere3D: React.FC<BlochSphere3DProps> = ({ targetVector, settings })
       {settings.showLabels && (
         <>
           {/* Z Poles: |0⟩ and |1⟩ */}
-          <Html position={[0, 1.15, 0]} center>
-            <div className="px-2 py-0.5 rounded bg-slate-900/90 text-sky-400 text-xs font-semibold border border-sky-500/20 shadow-lg select-none">
+          <Html position={[0, 1.15, 0]} center zIndexRange={[10, 0]}>
+            <div className="px-2 py-0.5 rounded-md bg-slate-900/90 text-sky-400 text-xs font-semibold border border-sky-500/20 shadow-lg select-none">
               |0⟩
             </div>
           </Html>
-          <Html position={[0, -1.15, 0]} center>
-            <div className="px-2 py-0.5 rounded bg-slate-900/90 text-coral-400 text-xs font-semibold border border-coral-500/20 shadow-lg select-none">
+          <Html position={[0, -1.15, 0]} center zIndexRange={[10, 0]}>
+            <div className="px-2 py-0.5 rounded-md bg-slate-900/90 text-coral-400 text-xs font-semibold border border-coral-500/20 shadow-lg select-none">
               |1⟩
             </div>
           </Html>
 
           {/* X Poles: |+⟩ and |-⟩ */}
-          <Html position={[1.4, 0, 0]} center>
+          <Html position={[1.4, 0, 0]} center zIndexRange={[10, 0]}>
             <div className="text-[10px] text-rose-400 font-bold select-none">X (+)</div>
           </Html>
-          <Html position={[-1.4, 0, 0]} center>
+          <Html position={[-1.4, 0, 0]} center zIndexRange={[10, 0]}>
             <div className="text-[10px] text-rose-500 font-bold select-none">-X</div>
           </Html>
 
           {/* Y Poles: |i+⟩ and |i-⟩ */}
-          <Html position={[0, 0, 1.4]} center>
+          <Html position={[0, 0, 1.4]} center zIndexRange={[10, 0]}>
             <div className="text-[10px] text-emerald-400 font-bold select-none">Y (+)</div>
           </Html>
-          <Html position={[0, 0, -1.4]} center>
+          <Html position={[0, 0, -1.4]} center zIndexRange={[10, 0]}>
             <div className="text-[10px] text-emerald-500 font-bold select-none">-Y</div>
           </Html>
         </>
@@ -221,9 +221,9 @@ const BlochSphere3D: React.FC<BlochSphere3DProps> = ({ targetVector, settings })
         </mesh>
       </group>
 
-      {/* Active Vector Value Indicator Badge */}
-      <Html position={[currentVec.x * 1.15, currentVec.y * 1.15, currentVec.z * 1.15]} center>
-        <div className="px-1.5 py-0.5 rounded bg-amber-500/90 text-slate-950 font-bold text-[9px] uppercase tracking-wide pointer-events-none shadow-md border border-amber-300/30">
+      {/* Active Vector Value Indicator Badge with perfect pill corners */}
+      <Html position={[currentVec.x * 1.15, currentVec.y * 1.15, currentVec.z * 1.15]} center zIndexRange={[10, 0]}>
+        <div className="px-2 py-0.5 rounded-full bg-amber-500 text-slate-950 font-bold text-[10px] tracking-wider shadow-lg border border-amber-300 select-none pointer-events-none">
           |ψ⟩
         </div>
       </Html>

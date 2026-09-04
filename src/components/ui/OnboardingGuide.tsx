@@ -35,13 +35,13 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({ isOpen, onClos
       icon: <Play className="w-8 h-8 text-blue-400" />
     },
     {
-      title: 'State amplitudes & Dirac Notation 🧮',
-      description: 'Displays the mathematical equation of the qubit state: |ψ⟩ = α|0⟩ + β|1⟩. Watch the complex values, magnitude, and relative phase angles adjust dynamically. Toggle Advanced Mode in the navbar to inspect complete complex variables.',
+      title: 'State Blend & Direction 🧮',
+      description: 'Shows the current state of your qubit. In quantum notation, |ψ⟩ represents the state, while |0⟩ and |1⟩ are the baseline poles. As you rotate the arrow, the blend between 0 and 1 updates in real time.',
       icon: <HelpCircle className="w-8 h-8 text-rose-400" />
     },
     {
       title: 'Measurement & Probabilities 📊',
-      description: 'Shows Born\'s probability rule: P(0) = |α|² and P(1) = |β|². Since quantum states are superpositions, pressing "Measure Qubit" collapses the qubit, forcing it to randomly snap to either |0⟩ or |1⟩ based on these likelihoods.',
+      description: 'Displays your chances of measuring 0 vs 1. When you click "Measure Qubit", the qubit stops being a blend and rolls the dice to randomly collapse to either |0⟩ or |1⟩ based on these exact chances.',
       icon: <AlertCircle className="w-8 h-8 text-emerald-400" />
     },
     {
@@ -70,14 +70,14 @@ export const OnboardingGuide: React.FC<OnboardingGuideProps> = ({ isOpen, onClos
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+      <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-950/95 backdrop-blur-md">
         
         {/* Modal container */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative w-full max-w-lg glass-panel border border-cyan-500/20 glow-cyan p-6 md:p-8 bg-slate-950/90 text-left space-y-6"
+          className="relative w-full max-w-lg glass-panel border border-cyan-500/25 glow-cyan p-6 md:p-8 bg-slate-950 rounded-2xl text-left space-y-6 shadow-2xl"
         >
           {/* Close button */}
           <button

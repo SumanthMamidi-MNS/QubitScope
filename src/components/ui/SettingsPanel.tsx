@@ -48,14 +48,14 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+      <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-950/95 backdrop-blur-md">
         
         {/* Settings Modal Container */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 15 }}
-          className="relative w-full max-w-sm glass-panel border border-cyan-500/25 glow-cyan p-6 bg-slate-950/90 text-left space-y-6"
+          className="relative w-full max-w-sm glass-panel border border-cyan-500/25 glow-cyan p-6 bg-slate-950 rounded-2xl text-left space-y-6 shadow-2xl"
         >
           {/* Header */}
           <div className="flex justify-between items-center pb-3 border-b border-white/5">

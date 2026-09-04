@@ -16,10 +16,8 @@ function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [docsOpen, setDocsOpen] = useState(false);
 
-  // Educational level mode selection (Beginner vs. Advanced)
-  const [isAdvanced, setIsAdvanced] = useState<boolean>(() => {
-    return localStorage.getItem('qubitscope_is_advanced') === 'true';
-  });
+  // Educational level mode selection (default to intuitive beginner-friendly view)
+  const isAdvanced = false;
 
   // Onboarding tutorial overlay guide state
   const [guideOpen, setGuideOpen] = useState(false);
@@ -162,38 +160,8 @@ function App() {
             </button>
           </nav>
 
-          {/* Mode Switcher & Guide Launcher */}
+          {/* Header Action Buttons */}
           <div className="hidden md:flex items-center">
-            {/* Beginner/Advanced Level Switcher */}
-            <div className="flex bg-slate-950/60 p-0.5 rounded-lg border border-white/5 ml-4 font-mono text-[9px] items-center shrink-0">
-              <button
-                onClick={() => {
-                  setIsAdvanced(false);
-                  localStorage.setItem('qubitscope_is_advanced', 'false');
-                }}
-                className={`px-2 py-1 rounded font-bold cursor-pointer transition-all ${
-                  !isAdvanced
-                    ? 'bg-blue-600 text-slate-100 shadow-sm'
-                    : 'text-slate-500 hover:text-slate-300'
-                }`}
-              >
-                Beginner
-              </button>
-              <button
-                onClick={() => {
-                  setIsAdvanced(true);
-                  localStorage.setItem('qubitscope_is_advanced', 'true');
-                }}
-                className={`px-2 py-1 rounded font-bold cursor-pointer transition-all ${
-                  isAdvanced
-                    ? 'bg-blue-600 text-slate-100 shadow-sm'
-                    : 'text-slate-500 hover:text-slate-300'
-                }`}
-              >
-                Advanced
-              </button>
-            </div>
-
             {/* Quick Tutorial Trigger */}
             <button
               onClick={() => setGuideOpen(true)}
@@ -273,35 +241,8 @@ function App() {
                 <Info size={16} /> About
               </button>
               
-              {/* Mobile Mode Switcher & Guide triggers */}
+              {/* Mobile Guide & Settings triggers */}
               <div className="border-t border-white/5 pt-3 mt-1.5 px-4 flex flex-col gap-3 font-mono text-[10px]">
-                <div className="flex justify-between items-center text-slate-400">
-                  <span>EDUCATIONAL LEVEL:</span>
-                  <div className="flex bg-slate-950 p-0.5 rounded-lg border border-white/5">
-                    <button
-                      onClick={() => {
-                        setIsAdvanced(false);
-                        localStorage.setItem('qubitscope_is_advanced', 'false');
-                      }}
-                      className={`px-2.5 py-1 rounded font-bold transition-all ${
-                        !isAdvanced ? 'bg-blue-600 text-slate-100' : 'text-slate-500'
-                      }`}
-                    >
-                      Beginner
-                    </button>
-                    <button
-                      onClick={() => {
-                        setIsAdvanced(true);
-                        localStorage.setItem('qubitscope_is_advanced', 'true');
-                      }}
-                      className={`px-2.5 py-1 rounded font-bold transition-all ${
-                        isAdvanced ? 'bg-blue-600 text-slate-100' : 'text-slate-500'
-                      }`}
-                    >
-                      Advanced
-                    </button>
-                  </div>
-                </div>
                 <button
                   onClick={() => {
                     setGuideOpen(true);
